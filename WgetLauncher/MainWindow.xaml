@@ -1,0 +1,42 @@
+﻿<Window x:Class="WgetLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WgetLauncher"
+        mc:Ignorable="d"
+        Title="Wget Launcher" Height="254.8" Width="600" ResizeMode="CanMinimize"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="labelURL" Content="URL:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="26" Width="36" RenderTransformOrigin="0.472,0.385"/>
+        <Label x:Name="labelDownloadRate" Content="Download rate:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,109,0,0" Height="26" Width="97"/>
+        <Label x:Name="labelRejectFiles" Content="Reject:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,78,0,0" Height="26" Width="47"/>
+        <Label x:Name="labelAcceptFiles" Content="(only) Accept:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="44,78,0,0" Height="26" Width="88"/>
+        <TextBox x:Name="txtURL" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="521" Margin="51,10,0,0" Grid.ColumnSpan="3" FontSize="12"/>
+        <Button x:Name="btnSaveTo" Content="Save to..." HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Margin="10,41,0,0" Click="btnSaveTo_Click"/>
+        <TextBox x:Name="txtDestination" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="465" Margin="107,45,0,0" Text="D:\Torrents" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txtRejectFiles" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Text="index.html*" Width="180" Margin="57,78,0,92" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtAcceptFiles" HorizontalAlignment="Right" Height="27" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="180" Grid.Column="1" Margin="0,78,79,0" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtDownloadRate" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="1000k" VerticalAlignment="Top" Width="53" Margin="112,110,0,0"/>
+        <CheckBox x:Name="cbHideConsoleWindows" Content="Hide Windows?" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="0,114,0,0" Checked="cbHideConsoleWindows_Checked" Height="18" Width="111"/>
+        <CheckBox x:Name="cbMinimizeConsoleWindows" Content="Minimize windows?" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="137,114,0,0" Height="18" Width="134" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Grid.Column="1" Margin="168,155,0,0" Click="btnHelp_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnDownload" Content="Download" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Grid.Column="1" Margin="44,155,0,0" Click="btnDownload_Click"/>
+        <Label x:Name="labelProcessCount" Content="Processes: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17,159,0,0"/>
+        <Button x:Name="btnKillWget" Content="Kill Processes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Grid.Column="2" Margin="54,155,0,0" Click="btnKillWget_Click"/>
+
+    </Grid>
+</Window>
